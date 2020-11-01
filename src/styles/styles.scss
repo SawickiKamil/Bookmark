@@ -1,0 +1,57 @@
+@import 'variables';
+@import 'styles/reset';
+@import './mixins';
+html,
+body {
+  min-height: 100%;
+}
+
+html,
+body,
+button,
+input {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 2rem * 1.25;
+  color: map-deep-get($colors, 'secondary', 'base');
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 26px;
+  color: map-deep-get($colors, 'secondary', 'base');
+  font-weight: 500;
+  margin-bottom: 2rem;
+  @include on-xs-only {
+    font-size: 18px;
+    margin-bottom: 1.1rem;
+  }
+}
+
+h3 {
+  font-size: 15px;
+  color: 'black';
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: map-deep-get($colors, 'grey', 'base');
+  @include on-xs-only {
+    font-size: 15px;
+  }
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+a {
+  font-size: 18px;
+}

@@ -1,0 +1,36 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.title-ext {
+  font-size: 18px;
+}
+
+.extensionCard {
+  width: 280px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 35px 0 25px;
+  box-shadow: 0 10px 10px map-deep-get($colors, 'primary', 'lighten-1');
+  border-radius: 10px;
+  @include on-sm-and-down {
+    margin-bottom: 20px;
+  }
+
+  &__browser-name {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+  }
+
+  &__browser-version {
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+  &__divider {
+    margin-bottom: 25px;
+  }
+}

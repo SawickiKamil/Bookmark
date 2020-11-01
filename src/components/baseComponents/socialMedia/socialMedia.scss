@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.socialMedia {
+  margin: 0 -20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  &__icon {
+    margin-left: 60px;
+    cursor: pointer;
+    fill: 'red';
+
+    &:hover path {
+      fill: map-deep-get($colors, 'alert', 'base');
+    }
+
+    @include on-sm-and-down {
+      margin: 0 5%;
+    }
+  }
+}

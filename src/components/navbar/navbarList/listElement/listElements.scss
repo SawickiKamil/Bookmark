@@ -1,0 +1,41 @@
+@import '../../../../styles/variables';
+
+.list-element {
+  height: 80px;
+
+  &__nav-link {
+    color: map-deep-get($colors, 'secondary', 'base');
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem 2rem;
+    height: 100%;
+    &:hover {
+      color: map-deep-get($colors, 'alert', 'lighten-4');
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .list-element {
+    border-top: 1px solid white;
+    width: 100%;
+
+    &__nav-link {
+      color: white;
+      letter-spacing: 3px;
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+
+      &:hover {
+        color: map-deep-get($colors, 'alert', 'lighten-2');
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

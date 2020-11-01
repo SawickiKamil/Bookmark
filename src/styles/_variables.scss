@@ -1,0 +1,14 @@
+@import 'functions';
+$section-content-max-width: 1240px;
+
+$colors: (
+  'grey': generateColor(hsl(229, 8%, 60%)),
+  'primary': generateColor(hsl(231, 69%, 60%)),
+  'secondary': generateColor(hsl(229, 31%, 21%)),
+  'alert': generateColor(hsl(0, 94%, 66%)),
+);
+
+$breakpoints: (
+  'sm': 640px,
+  'md': 1024px,
+);

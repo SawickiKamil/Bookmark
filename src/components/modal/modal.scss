@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(black, 0.5);
+
+  &__wrapper {
+    padding: 10px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    @include on-sm-and-down {
+      width: 300px;
+      height: 300px;
+    }
+
+    &__text {
+      color: map-deep-get($colors, 'primary', 'base');
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hero-section-img {
+      width: 400px;
+
+      @include on-sm-and-down {
+        width: 250px;
+      }
+    }
+
+    &__close-icon {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+}

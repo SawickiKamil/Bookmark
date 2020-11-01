@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.baseSection {
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  .title {
+    width: 500px;
+    text-align: center;
+    @include on-xs-only {
+      width: 300px;
+    }
+  }
+
+  .paragraph {
+    width: 500px;
+    text-align: center;
+    @include on-xs-only {
+      text-align: center;
+      width: 300px;
+    }
+  }
+
+  &__children {
+    max-width: $section-content-max-width;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

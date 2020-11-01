@@ -1,0 +1,42 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.primary-button {
+  border: 1px solid transparent;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  text-rendering: none;
+  box-shadow: 0 1px 3px gray;
+
+  &:hover {
+    transition: 0.5s;
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.primary {
+  background-color: map-deep-get($colors, 'primary', 'base');
+
+  &:hover {
+    color: map-deep-get($colors, 'primary', 'base');
+    border: 1px solid map-deep-get($colors, 'primary', 'base');
+  }
+}
+
+.secondary {
+  background-color: map-deep-get($colors, 'alert', 'base');
+
+  &:hover {
+    color: map-deep-get($colors, 'alert', 'base');
+    border: 1px solid map-deep-get($colors, 'alert', 'base');
+    background-color: white;
+  }
+}

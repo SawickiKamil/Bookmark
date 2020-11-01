@@ -1,0 +1,35 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.main-card {
+  padding: 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    @include on-sm-and-down {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    @include on-sm-and-down {
+      text-align: center;
+      width: 500px;
+    }
+
+    @include on-xs-only {
+      width: 310px;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+
+    @include on-sm-and-down {
+      display: none;
+    }
+  }
+}

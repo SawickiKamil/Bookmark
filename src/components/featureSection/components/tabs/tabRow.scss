@@ -1,0 +1,21 @@
+@import '../../../../styles//variables';
+@import '../../../../styles/mixins';
+
+.select-card {
+  width: 750px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 70px;
+
+  @include on-sm-and-down {
+    border-top: 1px solid map-deep-get($colors, 'grey', 'lighten-2');
+    width: 550px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @include on-xs-only {
+    width: 310px;
+  }
+}

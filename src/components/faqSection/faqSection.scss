@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.faq-section {
+  width: 550px;
+  border-bottom: solid 1px map-deep-get($colors, 'grey', 'lighten-1');
+  margin: 45px 0;
+
+  @include on-xs-only {
+    width: 310px;
+  }
+}
+
+.button-styles {
+  margin-bottom: 110px;
+  @include on-sm-and-down {
+    margin-bottom: 80px;
+  }
+}

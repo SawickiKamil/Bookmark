@@ -1,0 +1,33 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.footer-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 40px;
+  @include on-sm-and-down {
+    flex-direction: column;
+    padding: 30px 0;
+  }
+
+  &__element {
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: white;
+    text-transform: uppercase;
+    padding: 0 30px;
+    margin: 0;
+
+    &:hover {
+      color: map-deep-get($colors, 'alert', 'base');
+    }
+    @include on-sm-and-down {
+      padding: 0;
+      text-align: center;
+      padding-bottom: 1.5rem;
+    }
+  }
+}

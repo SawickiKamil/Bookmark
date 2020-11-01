@@ -1,0 +1,77 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.faq-element {
+  padding: 25px 20px 25px 0;
+  border-top: solid 1px map-deep-get($colors, 'grey', 'lighten-1');
+  cursor: pointer;
+  &__question {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: map-deep-get($colors, 'alert', 'base');
+    }
+
+    @include on-xs-only {
+      font-size: 14px;
+    }
+  }
+
+  &__question::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+
+    background-image: url('../../../icons/icon-arrow.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transition: all 0.4s ease-out;
+  }
+
+  &__answer {
+    color: map-deep-get($colors, 'grey', 'base');
+    line-height: 2;
+    opacity: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    font-size: 16px;
+    transition: all 0.4s ease-out;
+    @include on-xs-only {
+      font-size: 14px;
+    }
+  }
+}
+
+.faq-element-active {
+  @extend .faq-element;
+
+  &__question-active {
+    @extend .faq-element__question;
+    margin-bottom: 15px;
+  }
+
+  &__question-active::after {
+    @extend .faq-element__question::after;
+
+    background-image: url('../../../icons/icon-arrow-active.svg');
+    transition: all 0.4s ease-out;
+    margin-bottom: 15px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &__answer-active {
+    @extend .faq-element__answer;
+    margin-top: 45px;
+    max-height: 800px;
+    opacity: 1;
+  }
+}
