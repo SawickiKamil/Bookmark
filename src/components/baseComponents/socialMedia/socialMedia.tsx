@@ -10,8 +10,12 @@ interface ISocialMediaProps {
 export const SocialMedia = ({ className }: ISocialMediaProps) => {
   return (
     <div className={['socialMedia', className].join(' ')}>
-      <FacebookIcon className="socialMedia__icon" />
-      <TwitterIcon className="socialMedia__icon" />
+      <a href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank" className="socialMedia__icon">
+        <FacebookIcon />
+      </a>
+      <a href="https://twitter.com/" rel="noopener noreferrer" target="_blank" className="socialMedia__icon">
+        <TwitterIcon />
+      </a>
     </div>
   )
 }

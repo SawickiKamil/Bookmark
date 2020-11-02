@@ -9,7 +9,22 @@ const randomNumberFirefox = Math.floor(Math.random() * 100 + 1)
 const randomNumberOpera = Math.floor(Math.random() * 100 + 1)
 
 export const extensionData: IExtensionProps[] = [
-  { browserIcon: <Chrome />, browserName: 'Chrome', browserVersion: randomNumberChrome },
-  { browserIcon: <Firefox />, browserName: 'Firefox', browserVersion: randomNumberFirefox },
-  { browserIcon: <Opera />, browserName: 'Opera', browserVersion: randomNumberOpera },
+  {
+    browserIcon: <Chrome />,
+    browserName: 'Chrome',
+    browserVersion: randomNumberChrome,
+    navigateTo: 'https://www.google.com/chrome',
+  },
+  {
+    browserIcon: <Firefox />,
+    browserName: 'Firefox',
+    browserVersion: randomNumberFirefox,
+    navigateTo: 'https://www.mozilla.org/pl/firefox',
+  },
+  {
+    browserIcon: <Opera />,
+    browserName: 'Opera',
+    browserVersion: randomNumberOpera,
+    navigateTo: 'https://www.opera.com/pl',
+  },
 ]

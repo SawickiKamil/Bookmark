@@ -2,7 +2,7 @@ import * as React from 'react'
 import './footer.scss'
 import BookmarksLogoIcon from 'icons/logo/bookmarkLogo'
 import { SocialMedia } from 'components/baseComponents'
-import { FooterListElements } from 'constant'
+import { FooterListElements } from './data'
 import FooterList from './footerList/footerList'
 
 const Footer = () => {

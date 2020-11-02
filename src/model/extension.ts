@@ -1,5 +1,6 @@
 export interface IExtensionProps {
-  browserIcon: any
+  browserIcon: React.ReactFragment
   browserName: string
   browserVersion: number
+  navigateTo: string
 }

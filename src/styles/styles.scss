@@ -11,6 +11,11 @@ body,
 button,
 input {
   font-family: 'Rubik', sans-serif;
+
+  //input placeholder colo
+  ::placeholder {
+    color: map-deep-get($colors, 'grey', 'lighten-2');
+  }
 }
 
 h1 {

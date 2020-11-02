@@ -20,6 +20,7 @@
     text-transform: uppercase;
     padding: 0 30px;
     margin: 0;
+    text-decoration: none;
 
     &:hover {
       color: map-deep-get($colors, 'alert', 'base');

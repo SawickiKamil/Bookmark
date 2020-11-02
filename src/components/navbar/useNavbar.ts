@@ -6,10 +6,14 @@ export const useNavbar = () => {
   const hideMobileMenu = React.useCallback(() => {
     if (window.innerWidth <= 960) return
     setIsMobileMenu(false)
-  }, [setIsMobileMenu])
+  }, [])
 
   React.useEffect(() => {
     window.addEventListener('resize', hideMobileMenu)
+
+    return () => {
+      window.removeEventListener('resize', hideMobileMenu)
+    }
   }, [hideMobileMenu])
 
   const handleClick = () => setIsMobileMenu(!isMobileMenu)
