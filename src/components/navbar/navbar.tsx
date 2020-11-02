@@ -5,33 +5,25 @@ import BookmarksLogoIcon from 'icons/logo/bookmarkLogo'
 import CloseIcon from 'icons/close'
 import { Link } from 'react-router-dom'
 import NavbarList from './navbarList'
+import { useNavbar } from './useNavbar'
 
 const NavBar: React.FC = () => {
-  const [click, setClick] = React.useState(false)
-
-  const hideMobileMenu = React.useCallback(() => {
-    if (window.innerWidth <= 960) {
-      setClick(false)
-    }
-  }, [setClick])
-
-  React.useEffect(() => {
-    window.addEventListener('resize', hideMobileMenu)
-  }, [hideMobileMenu])
-
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
+  const { isMobileMenu, closeMobileMenu, handleClick } = useNavbar()
 
   return (
-    <nav className={click ? 'navbar--active' : 'navbar'}>
+    <nav className={isMobileMenu ? 'navbar--active' : 'navbar'}>
       <div className="navbar__container">
         <Link to="/" className="navbar__container__logo" onClick={closeMobileMenu}>
-          {click ? <BookmarksLogoIcon fill="white" fillCircle="white" fillPath="black" /> : <BookmarksLogoIcon />}
+          {isMobileMenu ? (
+            <BookmarksLogoIcon fill="white" fillCircle="white" fillPath="black" />
+          ) : (
+            <BookmarksLogoIcon />
+          )}
         </Link>
         <div className="navbar__container__menu-icon" onClick={handleClick}>
-          {click ? <CloseIcon /> : <HamburgerIcon />}
+          {isMobileMenu ? <CloseIcon /> : <HamburgerIcon />}
         </div>
-        <NavbarList handleClick={closeMobileMenu} click={click} />
+        <NavbarList handleClick={closeMobileMenu} isMobileMenu={isMobileMenu} />
       </div>
     </nav>
   )

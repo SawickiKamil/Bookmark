@@ -4,13 +4,13 @@ import './buttonPicker.scss'
 import { LoginSmButton, PrimaryButton } from '../../../baseComponents'
 
 interface IButtonPickerProps {
-  click: boolean
+  isMobileMenu: boolean
 }
 
-export const ButtonPicker = ({ click }: IButtonPickerProps) => {
+export const ButtonPicker = ({ isMobileMenu }: IButtonPickerProps) => {
   return (
     <>
-      {click ? (
+      {isMobileMenu ? (
         <div className="sm-button">
           <LoginSmButton text="login" />
         </div>
