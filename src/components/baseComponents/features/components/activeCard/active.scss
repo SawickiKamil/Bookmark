@@ -78,7 +78,7 @@
   border-top-right-radius: 50%;
 
   @include on-sm-and-down {
-    left: -25px;
+    left: -10px;
   }
 
   @include on-xs-only {

@@ -1,9 +1,11 @@
 import * as React from 'react'
 
 export const useContact = () => {
-  const [amountOfDevelopers, setAmountOfDevelopers] = React.useState(35000)
+  const [countingNumber, setCountingNumber] = React.useState(35000)
   const [value, setValue] = React.useState('')
   const [alert, setAlert] = React.useState(true)
+
+  const subtractedNumber = 100
 
   const handleValue = React.useCallback(
     (value) => {
@@ -12,21 +14,22 @@ export const useContact = () => {
     [setValue]
   )
 
+  //
   React.useEffect(() => {
     const interval = setTimeout(() => {
-      if (amountOfDevelopers > 0) setAmountOfDevelopers((prev) => prev - 100)
+      if (countingNumber > 0) setCountingNumber((prev) => prev - subtractedNumber)
     }, 55)
 
     return () => {
       clearInterval(interval)
     }
-  }, [amountOfDevelopers])
+  }, [countingNumber])
 
   const validateEmail = React.useCallback((value: string) => {
     // mail validation - usually i'll go for Formik - 3rd party libs but in this project I don't really wanna use them though.
     // eslint-disable-next-line
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(value).toLowerCase())
+    const mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return mailValidation.test(String(value).toLowerCase())
   }, [])
 
   const handleClick = React.useCallback(() => {
@@ -37,5 +40,5 @@ export const useContact = () => {
     }
   }, [setAlert, validateEmail, value])
 
-  return { amountOfDevelopers, value, handleValue, handleClick, alert }
+  return { countingNumber, value, handleValue, handleClick, alert }
 }

@@ -5,6 +5,8 @@ import { useModal } from './useModal'
 import { FeatureData } from 'constant'
 import { Features } from 'components/baseComponents/features'
 
+const activeIndex: number = 1
+
 const Modal: React.FC = () => {
   const { isModalVisible, closeModal } = useModal()
 
@@ -17,10 +19,10 @@ const Modal: React.FC = () => {
               <CloseIcon fill="black" className="modal__wrapper__close-icon" />
             </div>
             <Features
-              activeIndex={1}
+              activeIndex={activeIndex}
               handleClick={() => {}}
               isModal={true}
-              tabData={FeatureData[1]}
+              tabData={FeatureData[activeIndex]}
               tabsData={FeatureData}
             />
           </div>

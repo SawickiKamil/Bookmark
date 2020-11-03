@@ -7,11 +7,11 @@ import { useContact } from './useContact'
 import { formatNumber } from 'utils'
 
 const ContactUsSection: React.FC = () => {
-  const { amountOfDevelopers, value, handleValue, handleClick, alert } = useContact()
+  const { countingNumber, value, handleValue, handleClick, alert } = useContact()
 
   return (
     <BaseSection className="contactUsSection">
-      <p className="contactUsSection__activeUsers">{formatNumber(amountOfDevelopers)}+ ALREADY JOINED</p>
+      <p className="contactUsSection__activeUsers">{formatNumber(countingNumber)}+ ALREADY JOINED</p>
       <h2 className="contactUsSection__title">
         Stay up-to-date with what <br /> we're doing
       </h2>
