@@ -1,5 +1,5 @@
-@import '../../../../styles//variables';
-@import '../../../../styles/mixins';
+@import '../../../../../styles//variables';
+@import '../../../../../styles/mixins';
 
 .select-card {
   width: 750px;
@@ -17,5 +17,13 @@
 
   @include on-xs-only {
     width: 310px;
+  }
+}
+
+.modal-select-card {
+  display: flex;
+  margin-bottom: 60px;
+  @include on-sm-and-down {
+    display: none;
   }
 }

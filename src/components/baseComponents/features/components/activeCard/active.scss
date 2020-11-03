@@ -1,5 +1,5 @@
-@import '../../../../styles//variables';
-@import '../../../../styles/mixins';
+@import '../../../../../styles//variables';
+@import '../../../../../styles/mixins';
 
 .active-card {
   width: 100%;
@@ -63,5 +63,27 @@
         -300px 0px 0px 0px map-deep-get($colors, 'primary', 'base'),
         -400px 0px 0px 0px map-deep-get($colors, 'primary', 'base');
     }
+  }
+}
+
+.modal-background {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  bottom: 0;
+  left: -10px;
+  background-color: map-deep-get($colors, 'primary', 'base');
+  z-index: -1;
+  border-bottom-right-radius: 35%;
+  border-top-right-radius: 50%;
+
+  @include on-sm-and-down {
+    left: -25px;
+  }
+
+  @include on-xs-only {
+    width: 250px;
+    height: 200px;
+    left: -10px;
   }
 }

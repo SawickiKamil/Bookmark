@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 950px;
+    width: 980px;
     height: 700px;
     display: flex;
     align-items: center;
@@ -28,27 +28,15 @@
     position: relative;
 
     @include on-sm-and-down {
-      height: 700px;
+      padding-top: 80px;
+      height: 720px;
       width: 600px;
     }
 
     @include on-xs-only {
+      padding-top: 20px;
       width: 310px;
-      height: 400px;
-    }
-
-    &__text {
-      color: map-deep-get($colors, 'primary', 'base');
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .hero-section-img {
-      width: 400px;
-
-      @include on-sm-and-down {
-        width: 250px;
-      }
+      height: 320px;
     }
 
     &__close-icon {
@@ -63,6 +51,10 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
+      @include on-xs-only {
+        right: 10px;
+        top: 10px;
+      }
 
       &:hover {
         background-color: map-deep-get($colors, 'grey', 'lighten-1');
@@ -73,47 +65,5 @@
         fill: map-deep-get($colors, 'alert', 'base');
       }
     }
-  }
-}
-
-.background {
-  position: absolute;
-  width: 450px;
-  height: 350px;
-  bottom: 0;
-  left: -10px;
-  background-color: map-deep-get($colors, 'primary', 'base');
-  z-index: -1;
-  border-bottom-right-radius: 35%;
-  border-top-right-radius: 50%;
-
-  @include on-sm-and-down {
-    left: -25px;
-  }
-
-  @include on-xs-only {
-    width: 250px;
-    height: 200px;
-    left: -10px;
-  }
-}
-
-.tab-row {
-  display: flex;
-  margin-bottom: 60px;
-  @include on-sm-and-down {
-    display: none;
-  }
-}
-
-.content-card {
-  padding: 0 30px;
-  margin-top: 50px;
-  @include on-sm-and-down {
-    padding-left: 0;
-    margin-top: 20px;
-  }
-  @include on-xs-only {
-    display: none;
   }
 }

@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { BaseSection } from 'components/baseComponents'
+import { BaseSection, Features } from 'components/baseComponents'
 import './featureSection.scss'
-import { ActiveCard, TabRow, ContentCard } from './components'
-import { CardsData } from './data'
+import { FeatureData } from 'constant'
 
 const FeatureSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = React.useState<number>(0)
@@ -18,18 +17,12 @@ const FeatureSection: React.FC = () => {
   return (
     <BaseSection title={title} content={content}>
       <div className="feature">
-        <TabRow tabs={CardsData} handleClick={handleClick} activeIndex={activeIndex} />
-        <div className="feature__container">
-          <div className="feature__container__left-container">
-            <ActiveCard
-              fullSizeImage={CardsData[activeIndex].fullSizeImage}
-              smallImage={CardsData[activeIndex].smallImage}
-            />
-          </div>
-          <div className="feature__container__right-container">
-            <ContentCard content={CardsData[activeIndex].content} title={CardsData[activeIndex].title} />
-          </div>
-        </div>
+        <Features
+          activeIndex={activeIndex}
+          handleClick={handleClick}
+          tabData={FeatureData[activeIndex]}
+          tabsData={FeatureData}
+        />
       </div>
     </BaseSection>
   )

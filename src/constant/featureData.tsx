@@ -7,7 +7,7 @@ import EasyShare from 'images/illustration3'
 import EasyShareSmall from 'images/illustration3Small'
 import React from 'react'
 
-export const CardsData: IFeatures[] = [
+export const FeatureData: IFeatures[] = [
   {
     fullSizeImage: <BookmarkPhoto />,
     smallImage: <BookmarkPhotoSmall />,

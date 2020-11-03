@@ -1,0 +1,32 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.container {
+  display: flex;
+  width: 100%;
+
+  @include on-sm-and-down {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__left-container {
+    flex: 1;
+
+    @include on-sm-and-down {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex: 0;
+    }
+  }
+
+  &__right-container {
+    flex: 1;
+
+    @include on-sm-and-down {
+      flex: 0;
+    }
+  }
+}
