@@ -5,10 +5,15 @@
   padding: 50px 50px;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
 
+  @include on-sm-and-down {
+    align-items: center;
+  }
+
   &__title {
+    width: 100%;
+    text-align: left;
     @include on-sm-and-down {
       text-align: center;
     }

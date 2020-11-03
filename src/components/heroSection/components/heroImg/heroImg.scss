@@ -1,0 +1,65 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.hero-img {
+  margin-right: -7%;
+  flex: 1;
+  position: relative;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 1350px) {
+    margin-right: -4%;
+  }
+
+  @media screen and (max-width: 1300px) {
+    margin-right: -2%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 0%;
+  }
+
+  @include on-sm-and-down {
+    margin-bottom: 80px;
+  }
+
+  @include on-xs-only {
+    height: 230px;
+    margin-bottom: 50px;
+  }
+
+  .hero-section-img {
+    width: 570px;
+    @include on-xs-only {
+      width: 310px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 480px;
+    height: 300px;
+    bottom: 0;
+    right: 0;
+    background-color: map-deep-get($colors, 'primary', 'base');
+    z-index: -1;
+    border-top-left-radius: 35%;
+    border-bottom-left-radius: 150px;
+    box-shadow: 200px 0px 0px 0px map-deep-get($colors, 'primary', 'base'),
+      400px 0px 0px 0px map-deep-get($colors, 'primary', 'base'),
+      600px 0px 0px 0px map-deep-get($colors, 'primary', 'base');
+
+    @include on-xs-only {
+      width: 250px;
+      height: 180px;
+      right: 0;
+      border-bottom-left-radius: 75px;
+      box-shadow: 100px 0px 0px 0px map-deep-get($colors, 'primary', 'base'),
+        200px 0px 0px 0px map-deep-get($colors, 'primary', 'base'),
+        300px 0px 0px 0px map-deep-get($colors, 'primary', 'base'),
+        400px 0px 0px 0px map-deep-get($colors, 'primary', 'base');
+    }
+  }
+}

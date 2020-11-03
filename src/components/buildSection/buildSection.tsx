@@ -16,9 +16,10 @@ const BuildSection = ({ name }: IConstruction) => {
 
   return (
     <BaseSection className="build-section">
-      <h1>{name} page under construction</h1>
-      <p>Dorp us a message in Features Page for more details</p>
-      <PrimaryButton text="Navigate To Main Page" variant="primary" onClick={handleClick} />
+      <h1>{name} page is coming soon ...</h1>
+      <p>Dorp us a message on Features Page.</p>
+      <p>We will notify you soon!</p>
+      <PrimaryButton className="buttons" text="Navigate To Main Page" variant="primary" onClick={handleClick} />
     </BaseSection>
   )
 }

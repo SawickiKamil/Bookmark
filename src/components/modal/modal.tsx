@@ -8,6 +8,8 @@ import { CardsData } from '../featureSection/data'
 const Modal: React.FC = () => {
   const { isModalVisible, closeModal } = useModal()
 
+  //todo it's copy paste - has to be refactored
+  //todo separate component has to created in baseComponent to be more consistent
   return (
     <>
       {isModalVisible && (
