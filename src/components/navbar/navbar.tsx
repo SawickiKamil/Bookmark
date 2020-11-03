@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import NavbarList from './navbarList'
 import { useNavbar } from './useNavbar'
 
-const NavBar: React.FC = () => {
+const Navbar: React.FC = () => {
   const { isMobileMenu, closeMobileMenu, handleClick } = useNavbar()
 
   return (
@@ -29,4 +29,4 @@ const NavBar: React.FC = () => {
   )
 }
 
-export default NavBar
+export default Navbar

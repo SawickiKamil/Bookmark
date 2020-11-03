@@ -7,11 +7,12 @@ interface ITabRowProps {
   tabs: ITab[]
   handleClick: (index: number) => void
   activeIndex: number
+  className?: string
 }
 
-export const TabRow = ({ tabs, handleClick, activeIndex }: ITabRowProps) => {
+export const TabRow = ({ tabs, handleClick, activeIndex, className }: ITabRowProps) => {
   return (
-    <div className="select-card">
+    <div className={className ? className : 'select-card'}>
       {tabs.map((item, index) => (
         <Tab
           key={`item-${index}`}

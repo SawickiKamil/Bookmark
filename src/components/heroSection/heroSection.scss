@@ -14,11 +14,24 @@
   }
 
   &__right-container {
+    margin-right: -7%;
     flex: 1;
     position: relative;
     height: 420px;
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width: 1350px) {
+      margin-right: -4%;
+    }
+
+    @media screen and (max-width: 1300px) {
+      margin-right: -2%;
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin-right: 0%;
+    }
 
     @include on-sm-and-down {
       margin-bottom: 80px;
@@ -83,6 +96,17 @@
       width: 350px;
       display: flex;
       justify-content: space-between;
+
+      @include on-xs-only {
+        width: 310px;
+      }
+
+      .button {
+        @include on-xs-only {
+          padding: 12px 12px;
+          font-size: 13px;
+        }
+      }
     }
   }
 }

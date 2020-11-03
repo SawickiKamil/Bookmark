@@ -6,6 +6,7 @@
   position: relative;
   height: 435px;
   padding-left: 50px;
+  z-index: 2;
 
   @include on-sm-and-down {
     width: 550px;
@@ -20,6 +21,8 @@
   }
 
   &__full-size-img {
+    position: relative;
+    z-index: 2;
     @include on-sm-and-down {
       display: flex;
       justify-content: center;

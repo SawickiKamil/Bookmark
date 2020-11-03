@@ -5,7 +5,7 @@ import './heroSection.scss'
 
 const HeroSection: React.FC = () => {
   return (
-    <BaseSection className="root">
+    <BaseSection>
       <div className="hero-section">
         <div className="hero-section__right-container">
           <div className="hero-section__bg" />
@@ -23,8 +23,8 @@ const HeroSection: React.FC = () => {
             load instantly. Try it for free
           </p>
           <div className="hero-section__left-container__buttons">
-            <PrimaryButton text="Get in on Chrome" variant="primary" />
-            <SecondaryButton text="Get in on Firefox" />
+            <PrimaryButton text="Get in on Chrome" variant="primary" className="button" />
+            <SecondaryButton text="Get in on Firefox" className="button" />
           </div>
         </div>
       </div>

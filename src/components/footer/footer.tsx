@@ -5,7 +5,7 @@ import { SocialMedia } from 'components/baseComponents'
 import { FooterListElements } from './data'
 import FooterList from './footerList/footerList'
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer__wrapper">

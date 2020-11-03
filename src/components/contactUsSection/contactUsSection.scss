@@ -74,9 +74,11 @@
 .contact-button {
   @include on-sm-and-down {
     margin-top: 15px;
+    width: 100%;
 
     &--active {
       margin-top: 40px;
+      width: 100%;
     }
   }
 }

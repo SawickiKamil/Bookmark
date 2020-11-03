@@ -4,7 +4,7 @@ import './featureSection.scss'
 import { ActiveCard, TabRow, ContentCard } from './components'
 import { CardsData } from './data'
 
-const FeatureSection = () => {
+const FeatureSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = React.useState<number>(0)
 
   const handleClick = React.useCallback((index: number) => {

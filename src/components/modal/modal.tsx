@@ -2,8 +2,10 @@ import * as React from 'react'
 import './modal.scss'
 import CloseIcon from 'icons/close'
 import { useModal } from './useModal'
+import { ActiveCard, ContentCard, TabRow } from 'components/featureSection/components'
+import { CardsData } from '../featureSection/data'
 
-const Modal = () => {
+const Modal: React.FC = () => {
   const { isModalVisible, closeModal } = useModal()
 
   return (
@@ -11,11 +13,22 @@ const Modal = () => {
       {isModalVisible && (
         <div className="modal">
           <div className="modal__wrapper">
+            <TabRow tabs={CardsData} activeIndex={1} handleClick={() => {}} className="tab-row" />
             <div onClick={closeModal}>
               <CloseIcon fill="black" className="modal__wrapper__close-icon" />
             </div>
-            <img src={require('../../images/illustration-hero.svg')} alt="hero" className="hero-section-img" />
-            <p>Modal pops up whenever mouse leaves object Window.</p>
+            <div className="feature__container">
+              <div className="feature__container__left-container">
+                <ActiveCard
+                  fullSizeImage={CardsData[1].fullSizeImage}
+                  smallImage={CardsData[1].smallImage}
+                  className="background"
+                />
+              </div>
+              <div className="feature__container__right-container">
+                <ContentCard className="content-card" content={CardsData[0].content} title={CardsData[1].title} />
+              </div>
+            </div>
           </div>
         </div>
       )}

@@ -5,10 +5,11 @@ export interface IFeatures {
   content: string
   title: string
   tabName: string
+  className?: string
 }
 
-export type IActiveCard = Pick<IFeatures, 'smallImage' | 'fullSizeImage'>
+export type IActiveCard = Pick<IFeatures, 'smallImage' | 'fullSizeImage' | 'className'>
 
 export type ITab = Pick<IFeatures, 'tabName'>
 
-export type IContentCard = Pick<IFeatures, 'content' | 'title'>
+export type IContentCard = Pick<IFeatures, 'content' | 'title' | 'className'>

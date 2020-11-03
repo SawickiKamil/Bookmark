@@ -1,5 +1,5 @@
 import * as React from 'react'
-import NavBar from 'components/navbar'
+import Navbar from 'components/navbar'
 import Footer from 'components/footer'
 import BuildSection from 'components/buildSection'
 import Modal from 'components/modal'
@@ -7,7 +7,7 @@ import Modal from 'components/modal'
 const ContactPage: React.FC = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Modal />
       <BuildSection name="Contact" />
       <Footer />
