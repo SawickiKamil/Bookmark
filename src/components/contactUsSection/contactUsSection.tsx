@@ -1,7 +1,6 @@
 import * as React from 'react'
 import './contactUsSection.scss'
-import { BaseSection, PrimaryButton } from '../baseComponents'
-import Input from 'components/baseComponents/input/input'
+import { BaseSection, PrimaryButton, Input } from '../baseComponents'
 import ErrorIcon from 'icons/errow'
 import { useContact } from './useContact'
 import { formatNumber } from 'utils'

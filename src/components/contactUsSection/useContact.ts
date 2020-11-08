@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { validateEmail } from 'utils'
 
 export const useContact = () => {
   const [countingNumber, setCountingNumber] = React.useState(35000)
@@ -8,13 +9,12 @@ export const useContact = () => {
   const subtractedNumber = 100
 
   const handleValue = React.useCallback(
-    (value) => {
+    (value: string) => {
       setValue(value)
     },
     [setValue]
   )
 
-  //
   React.useEffect(() => {
     const interval = setTimeout(() => {
       if (countingNumber > 0) setCountingNumber((prev) => prev - subtractedNumber)
@@ -25,20 +25,13 @@ export const useContact = () => {
     }
   }, [countingNumber])
 
-  const validateEmail = React.useCallback((value: string) => {
-    // mail validation - usually i'll go for Formik - 3rd party libs but in this project I don't really wanna use them though.
-    // eslint-disable-next-line
-    const mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return mailValidation.test(String(value).toLowerCase())
-  }, [])
-
   const handleClick = React.useCallback(() => {
     if (validateEmail(value)) {
       setAlert(true)
     } else {
       setAlert(false)
     }
-  }, [setAlert, validateEmail, value])
+  }, [setAlert, value])
 
   return { countingNumber, value, handleValue, handleClick, alert }
 }

@@ -14,8 +14,8 @@ const FaqSection: React.FC = () => {
   return (
     <BaseSection title={title} content={content}>
       <div className="faq-section">
-        {faqs.map((faq, i) => (
-          <FaqElement key={i} faq={faq} index={i} toggleFAQ={toggleFAQ} />
+        {faqs.map((faq, index) => (
+          <FaqElement key={index} faq={faq} index={index} toggleFAQ={toggleFAQ} />
         ))}
       </div>
       <PrimaryButton text="More Info" variant="primary" className="button-styles" />

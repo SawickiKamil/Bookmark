@@ -1,17 +1,12 @@
 import * as React from 'react'
-import Navbar from 'components/navbar'
-import Footer from 'components/footer'
 import BuildSection from 'components/buildSection'
-import Modal from 'components/modal'
+import { PageWrapper } from 'components/baseComponents'
 
 const ContactPage: React.FC = () => {
   return (
-    <>
-      <Navbar />
-      <Modal />
+    <PageWrapper>
       <BuildSection name="Contact" />
-      <Footer />
-    </>
+    </PageWrapper>
   )
 }
 

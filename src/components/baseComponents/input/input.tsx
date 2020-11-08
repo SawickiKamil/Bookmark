@@ -9,7 +9,7 @@ interface IInputProps {
   onChange: (value: string) => void
 }
 
-const Input = ({ placeholder, type, value, className, onChange }: IInputProps) => {
+export const Input = ({ placeholder, type, value, className, onChange }: IInputProps) => {
   const handleOnChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       onChange(event.target.value)
@@ -27,5 +27,3 @@ const Input = ({ placeholder, type, value, className, onChange }: IInputProps) =
     />
   )
 }
-
-export default Input

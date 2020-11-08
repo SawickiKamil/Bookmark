@@ -12,7 +12,7 @@ export const BaseSection: React.FC<IBaseSectionProps> = ({ children, title, cont
     <section className={['baseSection', className].join(' ')}>
       {title && <h2 className="title">{title}</h2>}
       {content && <p className="paragraph">{content}</p>}
-      <div className="baseSection__children">{children}</div>
+      <main className="baseSection__children">{children}</main>
     </section>
   )
 }

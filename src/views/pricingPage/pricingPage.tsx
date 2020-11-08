@@ -1,17 +1,12 @@
 import * as React from 'react'
-import NavBar from 'components/navbar'
-import Footer from 'components/footer'
 import BuildSection from 'components/buildSection'
-import Modal from 'components/modal'
+import { PageWrapper } from 'components/baseComponents'
 
 const PricingPage: React.FC = () => {
   return (
-    <>
-      <NavBar />
-      <Modal />
+    <PageWrapper>
       <BuildSection name="Pricing" />
-      <Footer />
-    </>
+    </PageWrapper>
   )
 }
 
